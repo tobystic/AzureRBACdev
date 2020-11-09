@@ -5,7 +5,12 @@
     "actions": {
       "type": "array",
       "defaultValue": [
-        "Microsoft.Resources/subscriptions/resourceGroups/read"
+        "Microsoft.Resources/subscriptions/resourceGroups/read",
+		"Microsoft.Network/azureFirewallFqdnTags/read",
+		"Microsoft.Network/azureFirewalls/applicationRuleCollections/read",
+		"Microsoft.Network/azureFirewalls/natRuleCollections/read",
+		"Microsoft.Network/azureFirewalls/networkRuleCollections/read",
+		"Microsoft.Network/bastionHosts/read"
       ],
       "metadata": {
         "description": "Array of actions for the roleDefinition"
@@ -20,9 +25,9 @@
     },
     "roleName": {
       "type": "string",
-      "defaultValue": "Custom Role - RG Reader",
+      "defaultValue": "Custom Role - Firewall InfraAdmin",
       "metadata": {
-        "description": "Friendly name of the role definition"
+        "description": "Friendly name for the role definition"
       }
     },
     "roleDescription": {
