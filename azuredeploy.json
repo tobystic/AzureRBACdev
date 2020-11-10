@@ -5,7 +5,12 @@
     "actions": {
       "type": "array",
       "defaultValue": [
-        "Microsoft.Resources/subscriptions/resourceGroups/read"
+        "Microsoft.Resources/subscriptions/resourceGroups/read",
+		"Microsoft.Network/azureFirewallFqdnTags/*",
+		"Microsoft.Network/azureFirewalls/applicationRuleCollections/*",
+		"Microsoft.Network/azureFirewalls/natRuleCollections/*",
+		"Microsoft.Network/azureFirewalls/networkRuleCollections/*",
+		"Microsoft.Network/bastionHosts/*"
       ],
       "metadata": {
         "description": "Array of actions for the roleDefinition"
