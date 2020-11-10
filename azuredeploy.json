@@ -75,7 +75,7 @@
             "properties": {
                 "roleDefinitionId": "[subscriptionResourceId('Microsoft.Authorization/roleDefinitions', parameters('roleName'))]",
                 "principalId": "[parameters('principalId')]",
-                "scope": "/"
+                "scope": "[subscription().id]"
             }
         }
     ]
