@@ -1,82 +1,85 @@
 {
-    "$schema": "https://schema.management.azure.com/schemas/2018-05-01/subscriptionDeploymentTemplate.json#",
-    "contentVersion": "1.0.0.0",
-    "parameters": {
-        "actions": {
-            "defaultValue": [
-                "Microsoft.Resources/subscriptions/resourceGroups/read",
-                "Microsoft.Network/azureFirewallFqdnTags/read",
-                "Microsoft.Network/azureFirewalls/applicationRuleCollections/read",
-                "Microsoft.Network/azureFirewalls/natRuleCollections/read",
-                "Microsoft.Network/azureFirewalls/networkRuleCollections/read",
-                "Microsoft.Network/bastionHosts/read"
-            ],
-            "type": "Array",
-            "metadata": {
-                "description": "Array of actions for the roleDefinition"
-            }
-        },
-        "notActions": {
-            "defaultValue": [],
-            "type": "Array",
-            "metadata": {
-                "description": "Array of notActions for the roleDefinition"
-            }
-        },
-        "principalId": {
-            "type": "String",
-            "metadata": {
-                "description": "principalId of the user that will be given contributor access to the resourceGroup"
-            }
-        },
-        "roleName": {
-            "defaultValue": "Custom Role - Firewall InfraAdmin",
-            "type": "String",
-            "metadata": {
-                "description": "Friendly name for the role definition"
-            }
-        },
-        "roleDescription": {
-            "defaultValue": "Subscription Level Deployment of a Role Definition",
-            "type": "String",
-            "metadata": {
-                "description": "Detailed description of the role definition"
-            }
-        }
+  "$schema": "https://schema.management.azure.com/schemas/2018-05-01/subscriptionDeploymentTemplate.json#",
+  "contentVersion": "1.0.0.0",
+  "parameters": {
+    "actions": {
+      "type": "array",
+      "defaultValue": [
+        "Microsoft.Resources/subscriptions/resourceGroups/read"
+      ],
+      "metadata": {
+        "description": "Array of actions for the roleDefinition"
+      }
     },
-    "variables": {
-        "roleDefName": "[guid(subscription().id, string(parameters('actions')), string(parameters('notActions')))]"
+    "notActions": {
+      "type": "array",
+      "defaultValue": [],
+      "metadata": {
+        "description": "Array of notActions for the roleDefinition"
+      }
     },
-    "resources": [
-        {
-            "type": "Microsoft.Authorization/roleDefinitions",
-            "apiVersion": "2018-07-01",
-            "name": "[variables('roleDefName')]",
-            "properties": {
-                "roleName": "[parameters('roleName')]",
-                "description": "[parameters('roleDescription')]",
-                "type": "customRole",
-                "isCustom": true,
-                "permissions": [
-                    {
-                        "actions": "[parameters('actions')]",
-                        "notActions": "[parameters('notActions')]"
-                    }
-                ],
-                "assignableScopes": [
-                    "[subscription().id]"
-                ]
-            }
-        },
-        {
-            "type": "Microsoft.Authorization/roleAssignments",
-            "apiVersion": "2020-03-01-preview",
-            "name": "[variables('roleDefName')]",
-            "properties": {
-                "roleDefinitionId": "[subscriptionResourceId('Microsoft.Authorization/roleDefinitions', parameters('roleName'))]",
-                "principalId": "[parameters('principalId')]",
-                "scope": "[subscription().id]"
-            }
-        }
-    ]
+	 "principalId": {
+      "type": "string",
+      "metadata": {
+        "description": "principalId of the user that will be given contributor access in the subscription"
+      }
+	 },
+	 "roleDefinitionId": {
+      "type": "string",
+      "defaultValue": "8e3af657-a8ff-443c-a75c-2fe8c4bcb635",
+      "metadata": {
+        "description": "roleDefinition for the assignment - default is owner"
+      }
+    },
+    "roleName": {
+      "type": "string",
+      "defaultValue": "Custom Role - infra admin",
+      "metadata": {
+        "description": "Friendly name of the role definition"
+      }
+    },
+    "roleDescription": {
+      "type": "string",
+      "defaultValue": "Subscription Level Deployment of a Role Definition",
+      "metadata": {
+        "description": "Detailed description of the role definition"
+      }
+    }
+  },
+  "variables": {
+    "roleDefName": "[guid(subscription().id, string(parameters('actions')), string(parameters('notActions')))]",
+    "roleAssignmentName": "[guid('/', parameters('principalId'), parameters('roleDefinitionId'))]"
+  },
+  "resources": [
+    {
+      "type": "Microsoft.Authorization/roleDefinitions",
+      "apiVersion": "2018-07-01",
+      "name": "[variables('roleDefName')]",
+      "properties": {
+        "roleName": "[parameters('roleName')]",
+        "description": "[parameters('roleDescription')]",
+        "type": "customRole",
+        "isCustom": true,
+        "permissions": [
+          {
+            "actions": "[parameters('actions')]",
+            "notActions": "[parameters('notActions')]"
+          }
+        ],
+        "assignableScopes": [
+          "[subscription().id]"
+        ]
+      }
+    },
+	 {
+      "name": "[variables('roleAssignmentName')]",
+      "type": "Microsoft.Authorization/roleAssignments",
+      "apiVersion": "2020-03-01-preview",
+      "properties": {
+        "roleDefinitionId": "[subscriptionResourceId('Microsoft.Authorization/roleDefinitions', parameters('roleDefinitionId'))]",
+        "principalId": "[parameters('principalId')]",
+        "scope": "/"
+      }
+    }
+  ]
 }
