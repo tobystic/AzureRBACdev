@@ -23,6 +23,12 @@
         "description": "Array of notActions for the roleDefinition"
       }
     },
+	"principalId": {
+      "type": "string",
+      "metadata": {
+        "description": "principalId of the user that will be given contributor access to the resourceGroup"
+      }
+	},
     "roleName": {
       "type": "string",
       "defaultValue": "Custom Role - Firewall InfraAdmin",
@@ -60,6 +66,16 @@
         "assignableScopes": [
           "[subscription().id]"
         ]
+      }
+    },
+	{
+      "name": "[variables('roleAssignmentName')]",
+      "type": "Microsoft.Authorization/roleAssignments",
+      "apiVersion": "2020-03-01-preview",
+      "properties": {
+        "roleDefinitionId": "[subscriptionResourceId('Microsoft.Authorization/roleDefinitions', parameters('roleDefName'))]",
+        "principalId": "[parameters('principalId')]",
+        "scope": "/"
       }
     }
   ]
