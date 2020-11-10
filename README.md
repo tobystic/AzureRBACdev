@@ -5,7 +5,7 @@ This template is a subscription level template that will create a new role defin
 
 ------------------------------------------------------------------------------------------------------------------------------------------
 
-The actions will make changes to a firewall's network infrastructure operations and will be assignable at the subscription scope.  
+This template will enable a firewall admin to create and define an RBAC with actions (to make changes to a firewall's network infrastructure operations) and will be assignable at the subscription scope.  
 
 [![Deploy To Azure](https://raw.githubusercontent.com/Azure/azure-quickstart-templates/master/1-CONTRIBUTION-GUIDE/images/deploytoazure.svg?sanitize=true)](https://portal.azure.com/#create/Microsoft.Template/uri/https%3A%2F%2Fraw.githubusercontent.com%2Ftobystic%2FAzureRBACdev%2Fmain%2Fazuredeploy.json%3Ftoken%3DABK3IS74XQVGSJ5GY4AODSC7VLFAG)  
 
