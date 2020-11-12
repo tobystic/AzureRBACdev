@@ -6,11 +6,11 @@
       "type": "array",
       "defaultValue": [
         "Microsoft.Resources/subscriptions/resourceGroups/read",
-		"Microsoft.Network/azureFirewallFqdnTags/*",
-		"Microsoft.Network/azureFirewalls/applicationRuleCollections/*",
-		"Microsoft.Network/azureFirewalls/natRuleCollections/*",
-		"Microsoft.Network/azureFirewalls/networkRuleCollections/*",
-		"Microsoft.Network/bastionHosts/*"
+        "Microsoft.Network/azureFirewallFqdnTags/*",
+        "Microsoft.Network/azureFirewalls/applicationRuleCollections/*",
+        "Microsoft.Network/azureFirewalls/natRuleCollections/*",
+        "Microsoft.Network/azureFirewalls/networkRuleCollections/*",
+        "Microsoft.Network/bastionHosts/*"
       ],
       "metadata": {
         "description": "Array of actions for the roleDefinition"
@@ -23,22 +23,22 @@
         "description": "Array of notActions for the roleDefinition"
       }
     },
-	 "principalId": {
-      "type": "string",
-      "metadata": {
-        "description": "principalId of the user that will be given contributor access in the subscription"
-      }
-	 },
-	 "roleDefinitionId": {
-      "type": "string",
-      "defaultValue": "8e3af657-a8ff-443c-a75c-2fe8c4bcb635",
-      "metadata": {
-        "description": "roleDefinition for the assignment - default is owner"
-      }
+    "principalId": {
+            "type": "string",
+            "metadata": {
+                "description": "The principal to assign the role to"
+            }
+        },
+        "roleNameGuid": {
+            "type": "string",
+            "defaultValue": "[newGuid()]",
+            "metadata": {
+                "description": "A new GUID used to identify the role assignment"
+            }
     },
     "roleName": {
       "type": "string",
-      "defaultValue": "Custom Role - infra admin",
+      "defaultValue": "Network Security Custom Role",
       "metadata": {
         "description": "Friendly name of the role definition"
       }
@@ -52,8 +52,7 @@
     }
   },
   "variables": {
-    "roleDefName": "[guid(subscription().id, string(parameters('actions')), string(parameters('notActions')))]",
-    "roleAssignmentName": "[guid('/', parameters('principalId'), parameters('roleDefinitionId'))]"
+    "roleDefName": "[guid(subscription().id, string(parameters('actions')), string(parameters('notActions')))]"
   },
   "resources": [
     {
@@ -76,16 +75,15 @@
         ]
       }
     },
-	 {
-      
-      "type": "Microsoft.Authorization/roleAssignments",
-      "apiVersion": "2020-03-01-preview",
-      "name": "[variables('roleAssignmentName')]",
-      "properties": {
-        "roleDefinitionId": "[subscriptionResourceId('Microsoft.Authorization/roleDefinitions', parameters('roleDefinitionId'))]",
-        "principalId": "[parameters('principalId')]",
-        "scope": "/"
-      }
-    }
+    {
+            "type": "Microsoft.Authorization/roleAssignments",
+            "apiVersion": "2018-09-01-preview",
+            "name": "[parameters('roleNameGuid')]",
+            "DependsOn": ["[resourceid('Microsoft.Authorization/roleDefinitions/', variables('roleDefName'))]" ],
+            "properties": {
+                "roleDefinitionId": "[concat('/subscriptions/', subscription().subscriptionId, '/providers/Microsoft.Authorization/roleDefinitions/', variables('roleDefName'))]",
+                "principalId": "[parameters('principalId')]"
+            }
+        }
   ]
 }
