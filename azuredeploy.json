@@ -5,22 +5,17 @@
     "actions": {
       "type": "array",
       "defaultValue": [
-"Microsoft.Network/azurefirewalls/delete",
-"Microsoft.Network/azureFirewalls/networkRuleCollections/read",
-"Microsoft.Network/azurefirewalls/read",
+
+"Microsoft.Network/azureFirewallFqdnTags/read",  
 "Microsoft.Network/azureFirewalls/applicationRuleCollections/read",  
-"Microsoft.Network/azureFirewalls/applicationRuleCollections/read",  
-"Microsoft.Network/azureFirewalls/natRuleCollections/read", 
 "Microsoft.Network/azureFirewalls/natRuleCollections/read",
 "Microsoft.Network/azureFirewalls/networkRuleCollections/read",
-"Microsoft.Network/azureFirewalls/networkRuleCollections/read",
-"Microsoft.Network/firewallPolicies/*",  
-"Microsoft.Network/ipGroups/*",
-"Microsoft.Resources/deployments/*",  
-"Microsoft.Insights/alertRules/*",
-"Microsoft.Support/*",
+"Microsoft.Network/bastionHosts/read",  
+"Microsoft.Network/bastionHosts/getactivesessions/read", 
+"Microsoft.Network/bastionHosts/disconnectactivesessions/read", 
 "Microsoft.Resources/subscriptions/resourceGroups/read", 
-"Microsoft.Resources/subscriptions/resourceGroups/*"
+"Microsoft.Network/firewallPolicies/ruleCollectionGroups/read", 
+"Microsoft.Network/virtualNetworks/read"
       ],
       "metadata": {
         "description": "Array of actions for the roleDefinition"
