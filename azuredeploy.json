@@ -17,7 +17,7 @@
 "Microsoft.Network/azureFirewalls/networkRuleCollections/delete",  
 "Microsoft.Resources/deployments/*",
 "Microsoft.Network/firewallPolicies/ruleCollectionGroups/write", 
-"Microsoft.Network/firewallPolicies /threatIntelWhitelist/read", 
+"Microsoft.Network/firewallPolicies/read", 
 "Microsoft.Resources/subscriptions/resourceGroups/read", 
 "Microsoft.Insights/alertRules/*", 
 "Microsoft.Resources/subscriptions/resourceGroups/*", 
