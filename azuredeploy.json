@@ -6,15 +6,15 @@
       "type": "array",
       "defaultValue": [
 
+"Microsoft.Network/azurefirewalls/read",  
 "Microsoft.Network/azureFirewallFqdnTags/read",  
 "Microsoft.Network/azureFirewalls/applicationRuleCollections/read",  
 "Microsoft.Network/azureFirewalls/natRuleCollections/read",
-"Microsoft.Network/azureFirewalls/networkRuleCollections/read",
-"Microsoft.Network/bastionHosts/read",  
-"Microsoft.Network/bastionHosts/getactivesessions/read",  
+"Microsoft.Network/azureFirewalls/networkRuleCollections/read", 
 "Microsoft.Resources/subscriptions/resourceGroups/read", 
 "Microsoft.Network/firewallPolicies/ruleCollectionGroups/read", 
-"Microsoft.Network/virtualNetworks/read"
+"Microsoft.Network/virtualNetworks/read",
+"Microsoft.Resources/subscriptions/resourceGroups/read"
       ],
       "metadata": {
         "description": "Array of actions for the roleDefinition"
