@@ -49,7 +49,7 @@
     },
     "roleName": {
       "type": "string",
-      "defaultValue": "Network Security Custom Role",
+      "defaultValue": "Custom Role- Network Infrastructure admin",
       "metadata": {
         "description": "Friendly name of the role definition"
       }
