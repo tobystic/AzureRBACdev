@@ -14,7 +14,8 @@
 "Microsoft.Resources/subscriptions/resourceGroups/read", 
 "Microsoft.Network/firewallPolicies/ruleCollectionGroups/read", 
 "Microsoft.Network/virtualNetworks/read",
- "Microsoft.Network/firewallPolicies/read",
+"Microsoft.Network/firewallPolicies/read",
+"Microsoft.Network/firewallPolicies/ruleCollectionGroups/read", 
 "Microsoft.Resources/subscriptions/resourceGroups/read"
       ],
       "metadata": {
