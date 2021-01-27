@@ -11,8 +11,7 @@
 "Microsoft.Network/azureFirewalls/natRuleCollections/read",
 "Microsoft.Network/azureFirewalls/networkRuleCollections/read",
 "Microsoft.Network/bastionHosts/read",  
-"Microsoft.Network/bastionHosts/getactivesessions/read", 
-"Microsoft.Network/bastionHosts/disconnectactivesessions/read", 
+"Microsoft.Network/bastionHosts/getactivesessions/read",  
 "Microsoft.Resources/subscriptions/resourceGroups/read", 
 "Microsoft.Network/firewallPolicies/ruleCollectionGroups/read", 
 "Microsoft.Network/virtualNetworks/read"
