@@ -6,22 +6,17 @@
       "type": "array",
       "defaultValue": [
 
-"Microsoft.Network/azurefirewalls/delete",  
-"Microsoft.Network/azureFirewalls/networkRuleCollections/delete", 
-"Microsoft.Network/azurefirewalls/write",  
-"Microsoft.Network/azureFirewalls/applicationRuleCollections/write",  
-"Microsoft.Network/azureFirewalls/applicationRuleCollections/delete",  
-"Microsoft.Network/azureFirewalls/natRuleCollections/write",  
-"Microsoft.Network/azureFirewalls/natRuleCollections/delete",  
-"Microsoft.Network/azureFirewalls/networkRuleCollections/write",  
-"Microsoft.Network/azureFirewalls/networkRuleCollections/delete",  
-"Microsoft.Resources/deployments/*",
-"Microsoft.Network/firewallPolicies/ruleCollectionGroups/write", 
-"Microsoft.Network/firewallPolicies/read", 
+"Microsoft.Network/azurefirewalls/read",  
+"Microsoft.Network/azureFirewallFqdnTags/read",  
+"Microsoft.Network/azureFirewalls/applicationRuleCollections/read",  
+"Microsoft.Network/azureFirewalls/natRuleCollections/read",
+"Microsoft.Network/azureFirewalls/networkRuleCollections/read", 
 "Microsoft.Resources/subscriptions/resourceGroups/read", 
-"Microsoft.Insights/alertRules/*", 
-"Microsoft.Resources/subscriptions/resourceGroups/*", 
-"Microsoft.Support/*"
+"Microsoft.Network/firewallPolicies/ruleCollectionGroups/read", 
+"Microsoft.Network/virtualNetworks/read",
+"Microsoft.Network/firewallPolicies/read",
+"Microsoft.Network/firewallPolicies/ruleCollectionGroups/read", 
+"Microsoft.Resources/subscriptions/resourceGroups/read"
       ],
       "metadata": {
         "description": "Array of actions for the roleDefinition"
