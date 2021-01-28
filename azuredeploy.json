@@ -37,7 +37,7 @@
     "principalId": {
             "type": "string",
             "metadata": {
-                "description": "The principal to assign the role to"
+                "description": "The Object ID of the principal to assign the role "
             }
         },
         "roleNameGuid": {
