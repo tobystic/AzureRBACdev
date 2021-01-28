@@ -6,7 +6,7 @@
       "type": "array",
       "defaultValue": [
 
-      "Microsoft.Network/azurefirewalls/delete",   
+ "Microsoft.Network/azurefirewalls/delete",   
 "Microsoft.Network/azureFirewalls/networkRuleCollections/read",  
 "Microsoft.Network/azurefirewalls/read",  
 "Microsoft.Network/azureFirewalls/applicationRuleCollections/read",  
