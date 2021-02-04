@@ -18,11 +18,23 @@ Firewall Security Auditor/Reader role: This administrator requires mostly reader
 
 Firewall Security Administrator role: This role is assigned to an admin that is responsible for the security configurations in the network. Access control is used to manage connectivity, making sure actions are carefully assigned. This admin can analyze the security risk of each connection via the network and application rules and make changes as required. 
 
-Network Infrastructure Administrator role: This role has more overarching rights to change the infrastructure of the firewall from a network operations perspective, but would not necessarily need access to change network and application rules like the security admin. Permissions in this role include FirewallWallPolicies attributes such as: Threat Intelligence, DNS settings, Intrusion detection etc. 
+Network Infrastructure Administrator role: This role has more overarching rights to change the infrastructure of the firewall from a network operations perspective, but would not necessarily need access to change network and application rules like the security admin. Permissions in this role include [FirewallWallPolicies](https://docs.microsoft.com/en-us/azure/templates/microsoft.network/firewallpolicies#firewallpolicypropertiesformat-object) attributes such as: Threat Intelligence, DNS settings, Intrusion detection etc. 
 
 To create a custom role, you must provide the following input.  
 
+{ 
+  "DisplayName": "", 
+  "Description": "", 
+  "Actions": [], 
+  "NotActions": [], 
+  "DataActions": [], 
+  "NotDataActions": [], 
+  "AssignableScopes": [] 
+} 
 
+You can find the description of each requirement above in this [article](https://docs.microsoft.com/en-us/powershell/module/az.resources/new-azroledefinition?view=azps-4.8.0#description). To configure Azure roles using PowerShell, follow the steps to [create a custom role](https://docs.microsoft.com/en-us/powershell/module/az.resources/new-azroledefinition?view=azps-4.8.0). 
+
+You can click the “Deploy to Azure” button below to deploy a template for the Network infrastructure role discussed above from Github. You can use this custom template by editing the “action” field for the appropriate set of actions list in the samples below. Then provide the Principal ID(Object ID) of the user to assign the role. You can find a detailed step by step guide here. 
 
 
 [![Deploy To Azure](https://raw.githubusercontent.com/Azure/azure-quickstart-templates/master/1-CONTRIBUTION-GUIDE/images/deploytoazure.svg?sanitize=true)](https://portal.azure.com/#create/Microsoft.Template/uri/https%3A%2F%2Fraw.githubusercontent.com%2Ftobystic%2FAzureRBACdev%2Fmain%2Fazuredeploy.json%3Ftoken%3DABK3IS74XQVGSJ5GY4AODSC7VLFAG)  
