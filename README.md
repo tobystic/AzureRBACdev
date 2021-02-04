@@ -35,9 +35,12 @@ To create a custom role, you must provide the following input.
   "DataActions": [ ],  
   "NotDataActions": [ ],  
   "AssignableScopes": [ ]  
-  &nbsp;
+  
+  &nbsp;  
+  
   } 
-&nbsp;
+&nbsp;  
+
 You can find the description of each requirement above in this [article](https://docs.microsoft.com/en-us/powershell/module/az.resources/new-azroledefinition?view=azps-4.8.0#description). To configure Azure roles using PowerShell, follow the steps to [create a custom role](https://docs.microsoft.com/en-us/powershell/module/az.resources/new-azroledefinition?view=azps-4.8.0). 
 
 You can click the “Deploy to Azure” button below to deploy a template for the Network infrastructure role discussed above from Github. You can use this custom template by editing the “action” field for the appropriate set of actions list in the samples below. Then provide the Principal ID(Object ID) of the user to assign the role. You can find a detailed [step by step guide here](https://docs.microsoft.com/en-us/azure/firewall-manager/rule-hierarchy#create-custom-roles-to-access-the-rule-collection-groups).  
