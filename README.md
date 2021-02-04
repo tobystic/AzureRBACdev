@@ -17,7 +17,7 @@ There are various levels of administrative roles you might be looking to assign,
 
 *The following 3 examples are quite common in network scenarios*: 
 
-**Firewall Security Auditor/Reader role**: This administrator requires mostly reader privileges. The permission grants visibility into existing rules and other properties of the firewall. This user is therefore only able to view and not make changes.  
+**Firewall Security Reader role**: This administrator requires mostly reader privileges as maybe required in an auditor role. The permission grants visibility into existing rules and other properties of the firewall. This user is therefore only able to view and not make changes.  
 
 
 **Firewall Security Administrator role**: This role is assigned to an admin that is responsible for the security configurations in the network. Access control is used to manage connectivity, making sure actions are carefully assigned. This admin can analyze the security risk of each connection via the network and application rules and make changes as required.  
