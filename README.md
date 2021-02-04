@@ -1,6 +1,5 @@
 ## Role Based Access Control (RBAC) for Azure Firewall  
 
-&nbsp;  
 
 Network security requirements involve providing limited access and granting administrative permissions to users within a network. Role assignments are the way you control access to Azure back end and infrastructure resources. If the [built-in roles](https://docs.microsoft.com/en-us/azure/role-based-access-control/built-in-roles) do not meet the specific needs of your organization, Azure Role Based Access Control (RBAC) allows account owners to create [custom roles](https://docs.microsoft.com/en-us/azure/role-based-access-control/custom-roles) that an administrator can assign to Users/User groups.  
 
@@ -35,9 +34,9 @@ You can find the description of each requirement above in this [article](https:/
 
 You can click the “Deploy to Azure” button below to deploy a template for the Network infrastructure role discussed above from Github. You can use this custom template by editing the “action” field for the appropriate set of actions list in the samples below. Then provide the Principal ID(Object ID) of the user to assign the role. You can find a detailed [step by step guide here](https://docs.microsoft.com/en-us/azure/firewall-manager/rule-hierarchy#create-custom-roles-to-access-the-rule-collection-groups).  
 
-
-
+<p align="center">
 [![Deploy To Azure](https://raw.githubusercontent.com/Azure/azure-quickstart-templates/master/1-CONTRIBUTION-GUIDE/images/deploytoazure.svg?sanitize=true)](https://portal.azure.com/#create/Microsoft.Template/uri/https%3A%2F%2Fraw.githubusercontent.com%2Ftobystic%2FAzureRBACdev%2Fmain%2Fazuredeploy.json%3Ftoken%3DABK3IS74XQVGSJ5GY4AODSC7VLFAG)  
+</p>  
 
 *The following 3 examples are quite common in network scenarios*:  
 
