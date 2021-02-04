@@ -25,7 +25,7 @@ There are various levels of administrative roles you might be looking to assign,
 **Network Infrastructure Administrator role**: This role has more overarching rights to change the infrastructure of the firewall from a network operations perspective, but would not necessarily need access to change network and application rules like the security admin. Permissions in this role include [FirewallWallPolicies](https://docs.microsoft.com/en-us/azure/templates/microsoft.network/firewallpolicies#firewallpolicypropertiesformat-object) attributes such as: Threat Intelligence, DNS settings, Intrusion detection etc. 
 
 To create a custom role, you must provide the following input.  
-    ```
+```
     {  
 
   "DisplayName": "",  
@@ -37,8 +37,8 @@ To create a custom role, you must provide the following input.
   "AssignableScopes": [ ]  
 
       }
-      ```
-&nbsp;  
+```
+
 
 You can find the description of each requirement above in this [article](https://docs.microsoft.com/en-us/powershell/module/az.resources/new-azroledefinition?view=azps-4.8.0#description). To configure Azure roles using PowerShell, follow the steps to [create a custom role](https://docs.microsoft.com/en-us/powershell/module/az.resources/new-azroledefinition?view=azps-4.8.0). 
 
