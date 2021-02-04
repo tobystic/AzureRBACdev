@@ -67,7 +67,7 @@ You can click the “Deploy to Azure” button below to deploy a template for th
 "Microsoft.Support/*" 
 ```  
 
-**Firewall Security Reader **
+**Firewall Security Reader** 
 ```
 "Microsoft.Network/azurefirewalls/read",   
 "Microsoft.Network/azureFirewallFqdnTags/read",   
@@ -80,6 +80,26 @@ You can click the “Deploy to Azure” button below to deploy a template for th
 "Microsoft.Network/firewallPolicies/read", 
 "Microsoft.Network/firewallPolicies/ruleCollectionGroups/read",  
 "Microsoft.Resources/subscriptions/resourceGroups/read" 
+```  
+
+**Network Infrastructure administrator actions**   
+```
+Microsoft.Network/azurefirewalls/delete   
+Microsoft.Network/azureFirewalls/networkRuleCollections/read  
+Microsoft.Network/azurefirewalls/read  
+Microsoft.Network/azureFirewalls/applicationRuleCollections/read  
+Microsoft.Network/azureFirewalls/applicationRuleCollections/read  
+Microsoft.Network/azureFirewalls/natRuleCollections/read  
+Microsoft.Network/azureFirewalls/natRuleCollections/read  
+Microsoft.Network/azureFirewalls/networkRuleCollections/read  
+Microsoft.Network/azureFirewalls/networkRuleCollections/read  
+Microsoft.Network/firewallPolicies/*  
+Microsoft.Network/ipGroups/* 
+Microsoft.Resources/deployments/*  
+Microsoft.Insights/alertRules/*  
+Microsoft.Resources/subscriptions/resourceGroups/read 
+Microsoft.Support/*  
+Microsoft.Resources/subscriptions/resourceGroups/* 
 ```
 
 *NOTE: Role Definitions use a GUID for the name, this must be unique for every role assignment on the group. 
