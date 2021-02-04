@@ -77,7 +77,7 @@ This administrator requires mostly reader privileges as maybe required in an aud
 "Microsoft.Resources/subscriptions/resourceGroups/read" 
 ```  
 
-**Network Infrastructure administrator actions**
+**Network Infrastructure administrator**
 This role has more overarching rights to change the infrastructure of the firewall from a network operations perspective, but would not necessarily need access to change network and application rules like the security admin. Permissions in this role include [FirewallWallPolicies](https://docs.microsoft.com/en-us/azure/templates/microsoft.network/firewallpolicies#firewallpolicypropertiesformat-object) attributes such as: Threat Intelligence, DNS settings, Intrusion detection etc
 ```
 Microsoft.Network/azurefirewalls/delete   
