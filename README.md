@@ -96,7 +96,15 @@ Microsoft.Insights/alertRules/*
 Microsoft.Resources/subscriptions/resourceGroups/read 
 Microsoft.Support/*  
 Microsoft.Resources/subscriptions/resourceGroups/* 
-```
+```  
+
+*To remove the example role when done, use the following command in Powershell* 
+
+```Remove-AzRoleDefinition -Name “Custom Role - Firewall InfraAdmin”```  
+
+(make sure to use the appropriate display name in the command as used for your deployment). 
+
+**Note**: You may need the subscription owner permission if it’s the first time deploying an Azure Firewall instance in that subscription for the first deployment. This can also be achieved by registering the provider: Microsoft.ContainerService before creating the firewall.   
 
 *NOTE: Role Definitions use a GUID for the name, this must be unique for every role assignment on the group. 
 The roleDefName parameter is used to seed the guid() function with this value, change it for each deployment. 
