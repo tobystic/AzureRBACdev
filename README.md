@@ -48,9 +48,8 @@ You can click the “Deploy to Azure” button below to deploy a template for th
 
 [![Deploy To Azure](https://raw.githubusercontent.com/Azure/azure-quickstart-templates/master/1-CONTRIBUTION-GUIDE/images/deploytoazure.svg?sanitize=true)](https://portal.azure.com/#create/Microsoft.Template/uri/https%3A%2F%2Fraw.githubusercontent.com%2Ftobystic%2FAzureRBACdev%2Fmain%2Fazuredeploy.json%3Ftoken%3DABK3IS74XQVGSJ5GY4AODSC7VLFAG)  
 
-
-```
 **Firewall Security Administrator** 
+```
 "Microsoft.Network/azureFirewalls/networkRuleCollections/delete",  
 "Microsoft.Network/azurefirewalls/write",   
 "Microsoft.Network/azureFirewalls/applicationRuleCollections/write",   
@@ -66,8 +65,22 @@ You can click the “Deploy to Azure” button below to deploy a template for th
 "Microsoft.Insights/alertRules/*",  
 "Microsoft.Resources/subscriptions/resourceGroups/*",  
 "Microsoft.Support/*" 
-```
+```  
 
+**Firewall Security Reader **
+```
+"Microsoft.Network/azurefirewalls/read",   
+"Microsoft.Network/azureFirewallFqdnTags/read",   
+"Microsoft.Network/azureFirewalls/applicationRuleCollections/read",   
+"Microsoft.Network/azureFirewalls/natRuleCollections/read", 
+"Microsoft.Network/azureFirewalls/networkRuleCollections/read",  
+"Microsoft.Resources/subscriptions/resourceGroups/read",  
+"Microsoft.Network/firewallPolicies/ruleCollectionGroups/read",  
+"Microsoft.Network/virtualNetworks/read", 
+"Microsoft.Network/firewallPolicies/read", 
+"Microsoft.Network/firewallPolicies/ruleCollectionGroups/read",  
+"Microsoft.Resources/subscriptions/resourceGroups/read" 
+```
 
 *NOTE: Role Definitions use a GUID for the name, this must be unique for every role assignment on the group. 
 The roleDefName parameter is used to seed the guid() function with this value, change it for each deployment. 
