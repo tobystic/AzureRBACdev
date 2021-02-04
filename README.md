@@ -1,5 +1,6 @@
-## Role Based Access Control (RBAC) for Azure Firewall 
+## Role Based Access Control (RBAC) for Azure Firewall  
 
+&nbsp;
 Network security requirements involve providing limited access and granting administrative permissions to users within a network. Role assignments are the way you control access to Azure back end and infrastructure resources. If the [built-in roles](https://docs.microsoft.com/en-us/azure/role-based-access-control/built-in-roles) do not meet the specific needs of your organization, Azure Role Based Access Control (RBAC) allows account owners to create [custom roles](https://docs.microsoft.com/en-us/azure/role-based-access-control/custom-roles) that an administrator can assign to Users/User groups.  
 
 You can [configure role assignments](https://docs.microsoft.com/en-us/azure/role-based-access-control/role-assignments-steps) after you have defined the scope, either via Azure Portal, PowerShell, CLI or RestAPI. 
@@ -23,14 +24,14 @@ Network Infrastructure Administrator role: This role has more overarching rights
 To create a custom role, you must provide the following input.  
 
 { 
-  "DisplayName": "", 
-  "Description": "", 
-  "Actions": [], 
-  "NotActions": [], 
-  "DataActions": [], 
-  "NotDataActions": [], 
-  "AssignableScopes": [] 
-} 
+  "DisplayName": "",  
+  "Description": "",  
+  "Actions": [],  
+  "NotActions": [],  
+  "DataActions": [],  
+  "NotDataActions": [],  
+  "AssignableScopes": []  
+  } 
 
 You can find the description of each requirement above in this [article](https://docs.microsoft.com/en-us/powershell/module/az.resources/new-azroledefinition?view=azps-4.8.0#description). To configure Azure roles using PowerShell, follow the steps to [create a custom role](https://docs.microsoft.com/en-us/powershell/module/az.resources/new-azroledefinition?view=azps-4.8.0). 
 
