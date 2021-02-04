@@ -15,15 +15,6 @@ In this article, we discuss the actions that may be used to create security cons
 There are various levels of administrative roles you might be looking to assign, and this may be done at a management group level, subscription level, resource group level or resource level. Azure RBAC focuses on managing user [actions](https://docs.microsoft.com/en-us/azure/role-based-access-control/resource-provider-operations)  at these different scopes.  
 &nbsp;  
 
-*The following 3 examples are quite common in network scenarios*: 
-
-**Firewall Security Reader role**: This administrator requires mostly reader privileges as maybe required in an auditor role. The permission grants visibility into existing rules and other properties of the firewall. This user is therefore only able to view and not make changes.  
-
-
-**Firewall Security Administrator role**: This role is assigned to an admin that is responsible for the security configurations in the network. Access control is used to manage connectivity, making sure actions are carefully assigned. This admin can analyze the security risk of each connection via the network and application rules and make changes as required.  
-
-**Network Infrastructure Administrator role**: This role has more overarching rights to change the infrastructure of the firewall from a network operations perspective, but would not necessarily need access to change network and application rules like the security admin. Permissions in this role include [FirewallWallPolicies](https://docs.microsoft.com/en-us/azure/templates/microsoft.network/firewallpolicies#firewallpolicypropertiesformat-object) attributes such as: Threat Intelligence, DNS settings, Intrusion detection etc. 
-
 To create a custom role, you must provide the following input.  
 ```
     {  
@@ -48,7 +39,10 @@ You can click the “Deploy to Azure” button below to deploy a template for th
 
 [![Deploy To Azure](https://raw.githubusercontent.com/Azure/azure-quickstart-templates/master/1-CONTRIBUTION-GUIDE/images/deploytoazure.svg?sanitize=true)](https://portal.azure.com/#create/Microsoft.Template/uri/https%3A%2F%2Fraw.githubusercontent.com%2Ftobystic%2FAzureRBACdev%2Fmain%2Fazuredeploy.json%3Ftoken%3DABK3IS74XQVGSJ5GY4AODSC7VLFAG)  
 
+*The following 3 examples are quite common in network scenarios*:  
+
 **Firewall Security Administrator** 
+This role is assigned to an admin that is responsible for the security configurations in the network. Access control is used to manage connectivity, making sure actions are carefully assigned. This admin can analyze the security risk of each connection via the network and application rules and make changes as required.  
 ```
 "Microsoft.Network/azureFirewalls/networkRuleCollections/delete",  
 "Microsoft.Network/azurefirewalls/write",   
@@ -67,7 +61,8 @@ You can click the “Deploy to Azure” button below to deploy a template for th
 "Microsoft.Support/*" 
 ```  
 
-**Firewall Security Reader** 
+**Firewall Security Reader**
+This administrator requires mostly reader privileges as maybe required in an auditor role. The permission grants visibility into existing rules and other properties of the firewall. This user is therefore only able to view and not make changes
 ```
 "Microsoft.Network/azurefirewalls/read",   
 "Microsoft.Network/azureFirewallFqdnTags/read",   
@@ -82,7 +77,8 @@ You can click the “Deploy to Azure” button below to deploy a template for th
 "Microsoft.Resources/subscriptions/resourceGroups/read" 
 ```  
 
-**Network Infrastructure administrator actions**   
+**Network Infrastructure administrator actions**
+This role has more overarching rights to change the infrastructure of the firewall from a network operations perspective, but would not necessarily need access to change network and application rules like the security admin. Permissions in this role include [FirewallWallPolicies](https://docs.microsoft.com/en-us/azure/templates/microsoft.network/firewallpolicies#firewallpolicypropertiesformat-object) attributes such as: Threat Intelligence, DNS settings, Intrusion detection etc
 ```
 Microsoft.Network/azurefirewalls/delete   
 Microsoft.Network/azureFirewalls/networkRuleCollections/read  
