@@ -49,9 +49,24 @@ You can click the “Deploy to Azure” button below to deploy a template for th
 [![Deploy To Azure](https://raw.githubusercontent.com/Azure/azure-quickstart-templates/master/1-CONTRIBUTION-GUIDE/images/deploytoazure.svg?sanitize=true)](https://portal.azure.com/#create/Microsoft.Template/uri/https%3A%2F%2Fraw.githubusercontent.com%2Ftobystic%2FAzureRBACdev%2Fmain%2Fazuredeploy.json%3Ftoken%3DABK3IS74XQVGSJ5GY4AODSC7VLFAG)  
 
 
-
-You can add/modify/delete as needed. For more information, see [Understand Azure role definitions](https://docs.microsoft.com/azure/role-based-access-control/role-definitions). 
-To learn more about how to deploy the template, see the [quickstart](https://docs.microsoft.com/azure/role-based-access-control/custom-roles-template) article.  
+```
+**Firewall Security Administrator** 
+"Microsoft.Network/azureFirewalls/networkRuleCollections/delete",  
+"Microsoft.Network/azurefirewalls/write",   
+"Microsoft.Network/azureFirewalls/applicationRuleCollections/write",   
+"Microsoft.Network/azureFirewalls/applicationRuleCollections/delete",   
+"Microsoft.Network/azureFirewalls/natRuleCollections/write",   
+"Microsoft.Network/azureFirewalls/natRuleCollections/delete",   
+"Microsoft.Network/azureFirewalls/networkRuleCollections/write",   
+"Microsoft.Network/azureFirewalls/networkRuleCollections/delete",   
+"Microsoft.Resources/deployments/*", 
+"Microsoft.Network/firewallPolicies/ruleCollectionGroups/write",  
+"Microsoft.Network/firewallPolicies/read",  
+"Microsoft.Resources/subscriptions/resourceGroups/read",  
+"Microsoft.Insights/alertRules/*",  
+"Microsoft.Resources/subscriptions/resourceGroups/*",  
+"Microsoft.Support/*" 
+```
 
 
 *NOTE: Role Definitions use a GUID for the name, this must be unique for every role assignment on the group. 
