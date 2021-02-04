@@ -15,11 +15,11 @@ There are various levels of administrative roles you might be looking to assign,
 
 The following 3 examples are quite common in network scenarios: 
 
-Firewall Security Auditor/Reader role: This administrator requires mostly reader privileges. The permission grants visibility into existing rules and other properties of the firewall. This user is therefore only able to view and not make changes. 
+**Firewall Security Auditor/Reader role**: This administrator requires mostly reader privileges. The permission grants visibility into existing rules and other properties of the firewall. This user is therefore only able to view and not make changes. 
 
-Firewall Security Administrator role: This role is assigned to an admin that is responsible for the security configurations in the network. Access control is used to manage connectivity, making sure actions are carefully assigned. This admin can analyze the security risk of each connection via the network and application rules and make changes as required. 
+**Firewall Security Administrator role**: This role is assigned to an admin that is responsible for the security configurations in the network. Access control is used to manage connectivity, making sure actions are carefully assigned. This admin can analyze the security risk of each connection via the network and application rules and make changes as required. 
 
-Network Infrastructure Administrator role: This role has more overarching rights to change the infrastructure of the firewall from a network operations perspective, but would not necessarily need access to change network and application rules like the security admin. Permissions in this role include [FirewallWallPolicies](https://docs.microsoft.com/en-us/azure/templates/microsoft.network/firewallpolicies#firewallpolicypropertiesformat-object) attributes such as: Threat Intelligence, DNS settings, Intrusion detection etc. 
+**Network Infrastructure Administrator role**: This role has more overarching rights to change the infrastructure of the firewall from a network operations perspective, but would not necessarily need access to change network and application rules like the security admin. Permissions in this role include [FirewallWallPolicies](https://docs.microsoft.com/en-us/azure/templates/microsoft.network/firewallpolicies#firewallpolicypropertiesformat-object) attributes such as: Threat Intelligence, DNS settings, Intrusion detection etc. 
 
 To create a custom role, you must provide the following input.  
 
