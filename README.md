@@ -26,7 +26,8 @@ There are various levels of administrative roles you might be looking to assign,
 
 To create a custom role, you must provide the following input.  
 
-{ 
+{  
+
   "DisplayName": "",  
   "Description": "",  
   "Actions": [ ],  
@@ -34,6 +35,7 @@ To create a custom role, you must provide the following input.
   "DataActions": [ ],  
   "NotDataActions": [ ],  
   "AssignableScopes": [ ]  
+  &nbsp;
   } 
 &nbsp;
 You can find the description of each requirement above in this [article](https://docs.microsoft.com/en-us/powershell/module/az.resources/new-azroledefinition?view=azps-4.8.0#description). To configure Azure roles using PowerShell, follow the steps to [create a custom role](https://docs.microsoft.com/en-us/powershell/module/az.resources/new-azroledefinition?view=azps-4.8.0). 
