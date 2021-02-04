@@ -102,7 +102,6 @@ Microsoft.Resources/subscriptions/resourceGroups/*
 
 ```Remove-AzRoleDefinition -Name “Custom Role - Firewall InfraAdmin”```  
 
-(make sure to use the appropriate display name in the command as used for your deployment). 
 
 **Note**: You may need the subscription owner permission if it’s the first time deploying an Azure Firewall instance in that subscription for the first deployment. This can also be achieved by registering the provider: Microsoft.ContainerService before creating the firewall.   
 
